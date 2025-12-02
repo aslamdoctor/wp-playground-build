@@ -1,0 +1,12 @@
+version: "3.8"
+services:
+  playground:
+    build: .
+    # do NOT publish host ports here if deploying via Coolify Docker Compose.
+    # Coolify will manage the proxy and routing. Keep restart policy.
+    restart: unless-stopped
+    # Optional: resources/limits if you want
+    deploy:
+      resources:
+        limits:
+          memory: 1G
