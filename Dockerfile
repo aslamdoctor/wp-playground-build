@@ -7,7 +7,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
  && rm -rf /var/lib/apt/lists/*
 
 # enable mod_rewrite and wasm mime type; allow .htaccess
-RUN a2enmod rewrite \
+RUN a2enmod rewrite headers \
  && { echo 'AddType application/wasm .wasm'; } >> /etc/apache2/mods-available/mime.conf \
  && sed -i 's/AllowOverride None/AllowOverride All/g' /etc/apache2/apache2.conf
 
