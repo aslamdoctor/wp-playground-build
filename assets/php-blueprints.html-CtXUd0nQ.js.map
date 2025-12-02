@@ -1,0 +1,1 @@
+{"version":3,"mappings":";8WACE,MAAKA,EAAA,IAAC,OAAO,8BAAqB","names":["__vitePreload"],"ignoreList":[],"sources":["../../../../../packages/playground/website/demos/php-blueprints.html?html-proxy&index=1.js"],"sourcesContent":["\n\t\tawait import('./php-blueprints.ts');\n\t"],"file":"assets/php-blueprints.html-CtXUd0nQ.js"}

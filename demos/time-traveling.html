@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<head>
+	<title>Playground Time Traveling Demo</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<style>
+		* {
+			box-sizing: border-box;
+		}
+		body {
+			width: 100vw;
+			height: 100dvh;
+			margin: 0;
+			padding: 0;
+			display: flex;
+			flex-direction: column;
+			gap: 2vw;
+			font-family: Helvetica, sans-serif;
+		}
+		#desc {
+			padding: 0 2vw;
+		}
+		#desc-inner {
+			max-width: 500px;
+		}
+		#content {
+			display: flex;
+			flex-direction: row;
+			flex-grow: 1;
+		}
+		iframe {
+			width: 50%;
+			height: 100%;
+			border: 0;
+		}
+		#logs {
+			width: 50%;
+			height: 100%;
+			border: 1px solid black;
+			overflow: scroll;
+			text-wrap: nowrap;
+			white-space: pre;
+			padding: 20px;
+		}
+		#logs li {
+			margin-bottom: 4px;
+		}
+	</style>
+  <script type="module" crossorigin src="/assets/time-traveling.html-CCgW_8CV.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/modulepreload-polyfill-B5Qt9EMX.js">
+  <link rel="modulepreload" crossorigin href="/assets/optional/vendor-lezer-BVuE63-5.js">
+  <link rel="modulepreload" crossorigin href="/assets/optional/vendor-codemirror-CjDT2NJG.js">
+  <link rel="modulepreload" crossorigin href="/assets/optional/lang-css-DVB8fG3-.js">
+  <link rel="modulepreload" crossorigin href="/assets/optional/lang-javascript-rj9Dnv5V.js">
+  <link rel="modulepreload" crossorigin href="/assets/optional/lang-html-B08Fw0dr.js">
+  <link rel="modulepreload" crossorigin href="/assets/optional/lang-php-DAdSG8P3.js">
+  <link rel="modulepreload" crossorigin href="/assets/optional/blueprint-editor-BF9JwLNn.js">
+  <link rel="stylesheet" crossorigin href="/assets/optional/blueprint-editor-DxoIIkFZ.css">
+<meta name="commit-id" content="2b0c4dff6f8584eef33d6f187f0a4da9cc7b0b00" />
+							</head>
+<body>
+	<div id="desc">
+		<div id="desc-inner">
+			<h2>Time traveling demo</h2>
+			<p>
+				As you interact with Playground, the changes are recorded here.
+				You can then uncheck some of them and replay the remaining ones
+				– effectively allowing you to undo any changes you've made to
+				the WordPress site. This includes installing plugins, creating
+				pages, changing themes, etc.
+			</p>
+			<p>
+				For more context, see the original
+				<a
+					target="_blank"
+					rel="noreferrer noopener"
+					href="https://github.com/WordPress/wordpress-playground/pull/727"
+				>
+					Pull Request
+				</a>
+				.
+			</p>
+		</div>
+	</div>
+	<div id="content">
+		<iframe id="wp"></iframe>
+		<div id="logs"></div>
+	</div>
+</body>

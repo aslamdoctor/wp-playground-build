@@ -1,0 +1,31 @@
+[31-Jul-2025 08:06:00 UTC] WordPress database error <div style="clear:both">&nbsp;</div>
+<div class="queries" style="clear:both;margin-bottom:2px;border:red dotted thin;">
+<p>MySQL query:</p>
+<p>SELECT option_value FROM wp_options WHERE option_name = 'active_plugins' LIMIT 1</p>
+<p>Queries made or created this session were:</p>
+<ol>
+<li>Executing: BEGIN IMMEDIATE | (no parameters)</li>
+<li>Executing: SELECT `option_value` FROM `wp_options` WHERE `option_name` = &#039;active_plugins&#039; LIMIT 1 | (no parameters)</li>
+<li>Executing: ROLLBACK | (no parameters)</li>
+</ol>
+</div>
+<div style="clear:both;margin-bottom:2px;border:red dotted thin;" class="error_message" style="border-bottom:dotted blue thin;">
+SQLSTATE[HY000]: General error: 1 no such table: wp_options
+</div>
+<p>Backtrace:</p>
+<pre>#0 /internal/shared/sqlite-database-integration/wp-includes/sqlite-ast/class-wp-sqlite-driver.php(719): WP_SQLite_Driver->new_driver_exception('SQLSTATE[HY000]...', 'HY000', Object(PDOException))
+#1 /internal/shared/sqlite-database-integration/wp-includes/sqlite/class-wp-sqlite-db.php(537): WP_SQLite_Driver->query('SELECT option_v...')
+#2 /internal/shared/sqlite-database-integration/wp-includes/sqlite/class-wp-sqlite-db.php(449): WP_SQLite_DB->_do_query('SELECT option_v...')
+#3 /wordpress/wp-includes/class-wpdb.php(3075): WP_SQLite_DB->query('SELECT option_v...')
+#4 /internal/shared/sqlite-database-integration/integrations/query-monitor/boot.php(72): wpdb->get_row('SELECT option_v...')
+#5 /internal/shared/sqlite-database-integration/wp-includes/sqlite/db.php(72): require_once('/internal/share...')
+#6 /internal/shared/mu-plugins/sqlite-database-integration.php(42): require_once('/internal/share...')
+#7 /internal/shared/preload/0-sqlite.php(56): require_once('/internal/share...')
+#8 /internal/shared/preload/0-sqlite.php(49): Playground_SQLite_Integration_Loader->load_sqlite_integration()
+#9 /wordpress/wp-includes/load.php(745): Playground_SQLite_Integration_Loader->__set('field_types', Array)
+#10 /wordpress/wp-settings.php(144): wp_set_wpdb_vars()
+#11 /wordpress/wp-config.php(102): require_once('/wordpress/wp-s...')
+#12 /wordpress/wp-load.php(50): require_once('/wordpress/wp-c...')
+#13 /internal/eval.php(8): require('/wordpress/wp-l...')
+#14 {main}</pre>
+ for query SELECT option_value FROM wp_options WHERE option_name = 'active_plugins' LIMIT 1 made by require('wp-load.php'), require_once('wp-config.php'), require_once('wp-settings.php'), wp_set_wpdb_vars, Playground_SQLite_Integration_Loader->__set, Playground_SQLite_Integration_Loader->load_sqlite_integration, require_once('/internal/shared/mu-plugins/sqlite-database-integration.php'), require_once('/internal/shared/sqlite-database-integration/wp-includes/sqlite/db.php'), require_once('/internal/shared/sqlite-database-integration/integrations/query-monitor/boot.php'), WP_SQLite_DB->query, WP_SQLite_DB->print_error
